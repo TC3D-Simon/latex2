@@ -11,7 +11,7 @@ es sich dann an, eine Kopie des Verzeichnisses zu erstellen und `brief.tex` ents
 anzupassen. Wird das Projekt anschließend mit `make` kompiliert, dann erhält das Ausgabe-PDF
 denselben Namen wie das Projektverzeichnis.
 
-# Studienarbeiten
+## Studienarbeiten
 
 Dieses Verzeichnis enthält die Vorlage für eine Studienarbeit in LaTeX. Der Student
 muss in `thesis.tex` die Rahmendaten anpassen. Die eigentliche Arbeit kann in `main.tex`
