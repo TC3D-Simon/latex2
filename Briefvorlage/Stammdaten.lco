@@ -1,0 +1,9 @@
+% ===== Standardeinstellungen =====
+\setkomavar{fromname}{Prof.~Dr.~Rehrnert}
+\setkomavar{company}{Technische Hochschule Deggendorf}
+\setkomavar{department}[Fakult\"at]{Angewandte Informatik}
+\setkomavar{fromaddress}{Dieter-G\"orlitz-Platz 1\\94469 Deggendorf}
+\setkomavar{backaddress}{\usekomavar{fromname} $\bullet$ THD $\bullet$ Postfach 13 20 $\bullet$ 94453 Deggendorf}
+\setkomavar{fromphone}[Telefon-Durchwahl]{\parbox[t]{3cm}{Tel.: +49 991 3615-739\\Fax: +49 991 3615-297}}
+\setkomavar{fromemail}[E-Mail]{Rehrnert@th-deg.de}
+\setkomavar{fromurl}{www.th-deg.de}

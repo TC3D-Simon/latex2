@@ -1,0 +1,115 @@
+% THD_Vorlage.lco
+% Copyright 2019 Andreas Fischer
+% 
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+% http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+% 
+%-----------------------------------------------------------------------
+\ProvidesFile{THD_Vorlage.lco}%
+\LoadLetterOption{DIN} % Einstellungen für DIN 676 laden
+
+% Necessary packages for this template
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{berasans}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+
+\renewcommand*\familydefault{\sfdefault}
+
+\setlength{\oddsidemargin}{\useplength{toaddrhpos}}%
+\addtolength{\oddsidemargin}{-1in}%
+\AfterCalculatingTypearea{%
+  \setlength{\oddsidemargin}{\useplength{toaddrhpos}}%
+  \addtolength{\oddsidemargin}{-1in}%
+}%
+\activateareas
+
+\newkomavar{company}%
+\newkomavar{department}%
+\newkomavar{fax}%
+\setkomavar{fromlogo}{\includegraphics[width=3cm]{THD_Logo}}
+
+\@newplength{infocolwidth}%
+\ifdim \textwidth<0.666\paperwidth
+  \@setplength{infocolwidth}{.22222\paperwidth}%
+\else
+  \@setplength{infocolwidth}{0.1667\paperwidth}%
+\fi
+
+\@setplength{firstheadwidth}{\paperwidth}%
+\@setplength{firstheadhpos}{8mm}
+\setkomavar{firsthead}{%
+ \hspace{\useplength{firstheadvpos}}
+  \begin{tabular}[b]{l@{}}%
+    \ifkomavarempty{department}{}{%
+    \usekomavar*[\color{gray}]{department}\\
+    \usekomavar[\color{gray}]{department}
+    }
+  \end{tabular}
+  \hfill
+  \normalsize
+  \includegraphics[width=0.4\textwidth]{THD_Logo}
+ \hspace{6em}
+}
+
+\@setplength{refhpos}{\useplength{toaddrhpos}}
+\@setplength{refwidth}{\textwidth}
+\@addtoplength{refwidth}{\useplength{infocolwidth}}
+\@setplength{refaftervskip}{2cm}
+\removereffields
+\addtoreffields{yourmail}
+\addtoreffields{fromphone}
+\addtoreffields{fromemail}
+\addtoreffields{myref}
+\setkomavar*{date}{Ort, Datum}         
+
+\setkomafont{refname}{\tiny}
+\setkomafont{refvalue}{\scriptsize}
+
+\@setplength{sigbeforevskip}{6em}
+
+\@setplength{firstfootvpos}{\paperheight}
+\KOMAoptions{enlargefirstpage=true}
+\@setplength{firstfoothpos}{\useplength{toaddrhpos}}
+\@addtoplength{firstfoothpos}{\textwidth}
+\@addtoplength{firstfoothpos}{1em}
+\setkomavar{firstfoot}{%
+  \fontsize{7}{8}\sffamily
+  \begin{picture}(0,0)%
+    \put(0,0){\parbox[t]{\useplength{infocolwidth}}{%
+	\color{gray}
+        \raggedright
+        \vspace{-7cm}%
+        \includegraphics[width=\useplength{infocolwidth}]{logo-25y-thd}
+        \ifkomavarempty{company}{}{%
+          \\
+          \usekomavar{company}%
+        }\\[\baselineskip]
+        \usekomavar{fromaddress}\\
+        \vspace{1em}%
+        \usekomavar{fromphone}
+        \vspace{.3em}%
+
+        \usekomavar[\url]{fromurl}%
+      }%
+    }%
+  \end{picture}%
+  \hspace*{\useplength{infocolwidth}}%
+}%
+
+\newcommand*{\SetSize}{
+  \AtBeginDvi{\special{papersize=210mm,297mm}}%
+  \AtBeginDocument{\ifpdfoutput{%
+      \pdfpagewidth=210mm
+      \pdfpageheight=297mm
+    }{}%
+  }%
+}
+
+\endinput
