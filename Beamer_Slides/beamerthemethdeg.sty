@@ -1,0 +1,179 @@
+% Insipired by Cameron Bracken's theme originally posted
+% here: http://cameron.bracken.bz/beamer-template
+% January 2009
+
+% Modifications done by Martin Bjeldbak Madsen 
+% June 2014
+\mode<presentation>
+
+\RequirePackage{tgpagella}
+\RequirePackage{tikz}
+
+\usetikzlibrary{chains,shapes}
+
+\definecolor{thdgrey}{HTML}{CCCCCC} % grey
+\definecolor{thd-biw}{HTML}{1FA637} % green
+\definecolor{thd-bwl}{HTML}{B2150E} % red
+\definecolor{thd-et-mt}{HTML}{FFD900} % yellow
+\definecolor{thd-mb}{HTML}{008ACC} % blue
+\definecolor{thd-nuw}{HTML}{5C3A8E} % purple
+\definecolor{thd-agw}{HTML}{F18800} % orange
+\definecolor{thd-ai}{HTML}{E73D55} % coral
+\definecolor{thd-ecri}{HTML}{17A2B0} % cyan
+
+\setbeamertemplate{title page}
+{%
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{Campus_Sonnendeck.jpg}}
+\begin{flushright}
+    \includegraphics[width=.4\linewidth]{THD_Logo.pdf}\par
+\end{flushright}
+    \vspace{.5cm}\par
+    \begin{minipage}[c]{0.9\linewidth}
+	\begin{flushright}
+    	\usebeamerfont{title}\inserttitle
+	\end{flushright}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.09\linewidth}
+	\begin{flushright}
+	    \textcolor{thdgrey}{\rule{.5cm}{1.5cm}}
+	\end{flushright}
+    \end{minipage}\par
+    \vspace{.5cm}\par
+    \begin{flushright}
+	    \insertsubtitle
+    \end{flushright}
+    \begin{flushright}
+	    \insertauthor
+    \end{flushright}
+}
+
+\setbeamertemplate{background}
+{%
+  \ifnum\c@framenumber=1
+  \includegraphics[width=\paperwidth]{Campus_Sonnendeck.jpg}
+  \else
+  \fi
+}
+
+
+\setbeamertemplate{headline}
+{%
+  \ifnum\c@framenumber=1
+  \else
+  \vspace{.5cm}
+  \fi
+}
+
+\setbeamertemplate{frametitle}
+{%
+  \hspace{-1.2cm}
+  \begin{beamercolorbox}{frametitle}
+  \tikz
+  {%
+	  \fill[color=thdgrey] (-0.5,-0.5) rectangle (10,0.5);
+	  \draw[draw=none,left color=thdgrey,right color=white] (13.4,-0.5) rectangle (15,0.5);
+	  \draw[draw=none,fill=thd-ai] (.5,0) circle (.3cm);
+	  \node[regular polygon,regular polygon sides=3,draw=none,fill=white,rotate=270,inner sep=2pt] at (.5,0) {};
+	  \node[anchor=base west] (title) at (1,-0.2) {\insertframetitle};
+
+  }
+  \end{beamercolorbox}
+
+  \ifx\insertframesubtitle\@empty
+  \else
+  \hspace{-1.2cm}
+  \begin{beamercolorbox}{framesubtitle}
+  \tikz{%
+	  \node at (-0.5,0) {};
+	  \node[anchor=south west] (title) at (1,-0.4cm) {\normalsize\insertframesubtitle};
+  }
+  \end{beamercolorbox}
+  \fi
+}
+
+\setbeamertemplate{footline} % show slide number on all slides but the first
+{%
+  \ifnum\c@framenumber=1
+  \else
+  \begin{minipage}{\paperwidth}
+  \begin{columns}
+    \begin{column}{.05\paperwidth}
+    \end{column}
+    \begin{column}{.2\paperwidth}
+	    
+	    \tikz[
+		    every node/.style={circle,on chain},
+	    	    start chain=going right,
+	    	    node distance=1mm,]
+		    {%
+		    \node[fill=thd-biw] {};
+		    \node[fill=thd-bwl] {};
+		    \node[fill=thd-et-mt] {};
+		    \node[fill=thd-mb] {};
+		    \node[fill=thd-nuw] {};
+		    \node[fill=thd-agw] {};
+		    \node[fill=thd-ai] {};
+		    \node[fill=thd-ecri] {};
+	    }
+	    \end{column}
+	    \begin{column}[]{.5\paperwidth}
+
+		    \begin{beamercolorbox}[right]{footline}
+			    \insertshortauthor{} | \insertshorttitle{} | \insertframenumber/\inserttotalframenumber
+		    \end{beamercolorbox}
+    \end{column}
+    \begin{column}[c]{.2\paperwidth}
+	    \includegraphics[height=1cm]{logo-25y-thd.pdf}
+    \end{column}
+    \end{columns}
+    \end{minipage}
+  \fi%
+}
+
+
+% Display a slide before the current section with overview inf
+\AtBeginSection[]
+{%
+   \begin{frame}
+       \frametitle{Overview}
+       \tableofcontents[currentsection,hideothersubsections]
+   \end{frame}
+}
+
+\setbeamerfont{title like}{shape=\sffamily}
+\setbeamerfont{frametitle}{shape=\sffamily\bfseries}
+\setbeamerfont{section in head/foot}{shape=\scshape,size=\tiny}
+
+\setbeamertemplate{navigation symbols}{} % hide bottom nav buttons
+\setbeamercovered{transparent} % don't hide strip-teased bullet points
+\setbeamertemplate{itemize item}{\tikz{%
+	  \draw[draw=none,fill=thd-ai] (0,0) circle (.15cm);
+	  \node[regular polygon,regular polygon sides=3,draw=none,fill=white,rotate=270,inner sep=1pt] at (0,0) {};
+}}
+\setbeamertemplate{itemize subitem}{\tikz{%
+	  \draw[draw=none,fill=thd-ai] (0,0) circle (.1cm);
+}}
+
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\makeatletter
+\pgfdeclareverticalshading[lower.bg,upper.bg]{bmb@transition}{200cm}{%
+  color(0pt)=(upper.bg); color(2pt)=(upper.bg); color(4pt)=(upper.bg)}
+\makeatother
+
+\definecolor{barcolor}{HTML}{77C4D3} % teal
+\setbeamercolor{lower separation line head}{bg=thdgrey} 
+\setbeamercolor{lower separation line foot}{bg=thdgrey} 
+\setbeamercolor{normal text}{fg=black,bg=white} 
+\setbeamercolor{alerted text}{fg=red} 
+\setbeamercolor{example text}{fg=black} 
+\setbeamercolor{structure}{fg=black} 
+\setbeamercolor{frametitle}{bg=thdgrey}
+\setbeamercolor{framesubtitle}{bg=thdgrey!50}
+\setbeamercolor{block title}{bg=thdgrey}
+\setbeamercolor{block body}{bg=thdgrey!50}
+ 
+\setbeamercolor{palette tertiary}{fg=black,bg=black!10} 
+\setbeamercolor{palette quaternary}{fg=black,bg=black!10} 
+
+\mode<all>
