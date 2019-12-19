@@ -85,12 +85,12 @@
     \put(0,0){\parbox[t]{\useplength{infocolwidth}}{%
 	\color{gray}
         \raggedright
-        \vspace{-7cm}%
-        \includegraphics[width=\useplength{infocolwidth}]{logo-25y-thd}
+        \vspace{-15.5em}%
+        %\includegraphics[width=\useplength{infocolwidth}]{logo-25y-thd}
         \ifkomavarempty{company}{}{%
-          \\
+        %  \\
           \usekomavar{company}%
-        }\\[\baselineskip]
+        }\\%[\baselineskip]
         \usekomavar{fromaddress}\\
         \vspace{1em}%
         \usekomavar{fromphone}
