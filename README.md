@@ -25,6 +25,15 @@ Präsentationen. Die Präsentation kann in `presentation.tex` bearbeitet werden.
 Auch hier kann das Projekt mit `make` erstellt werden und das resultierende PDF
 erhält den Verzeichnisnamen.
 
+## Klausuren
+
+Dieses Verzeichnis enthält eine Vorlage für Klausuren. Die Vorlage basiert auf dem
+[LaTeX `exam.cls` Package](https://ctan.org/pkg/exam?lang=de) und orientiert sich
+im Design an der Vorgabe durch das Studienzentrum. Modifikationen müssen nur in der
+Datei `exam.tex` erfolgen. Es können die normalen Kommandos aus der `exam` Klasse
+verwendet werden (das Handbuch findet sich [hier](http://mirrors.ctan.org/macros/latex/contrib/exam/examdoc.pdf "Using the exam document class")).
+Mittels `make` kann anschließend das PDF erstellt werden.
+
 ---
 [Andreas Fischer](mailto:andreas.fischer@th-deg.de "Mail an Andreas Fischer")
 
