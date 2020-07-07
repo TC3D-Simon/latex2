@@ -1,0 +1,83 @@
+
+\ifdefined\pffl
+\renewcommand{\maketitle}{
+\renewcommand{\arraystretch}{1.7}
+\hspace{-2em}
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+	\hline
+	\multicolumn{2}{|p{.5\textwidth}|}{%
+	%\multirow{2}{*}{%
+		\vfill\includegraphics[width=.43\textwidth]{THD_Logo.pdf}
+	%}
+	}
+	& \multicolumn{2}{X|}{
+	\thdregnr:}\\
+	\hline
+	\multicolumn{2}{|p{.5\textwidth}|}{\thdcipher:}
+	& \multicolumn{1}{X|}{\thdpoints:}
+	& \multicolumn{1}{X|}{\thdgrade:}\\
+	\multicolumn{2}{|p{.5\textwidth}|}{}
+	& \multicolumn{1}{X|}{}
+	& \multicolumn{1}{X|}{}\\
+	\hline
+    \multicolumn{4}{|c|}{\textbf{\faculty}}\\
+	\hline
+	\textbf{\thdcourse:} & \course & \textbf{\thdsemester:} & \semester \\
+	\hline
+	\textbf{\thdcostudies:} & \programme & \textbf{\thdduration:} & \duration \\
+	\hline
+	\textbf{\thdexaminer:} & \theauthor & \textbf{\thddate} & \thedate \\
+	\hline
+	\textbf{\thdsupplies:} & \supplies & \textbf{\thdtime} & \thetime \\
+	\hline
+	\textbf{\thdexamtype:} & \examtype & \textbf{\thdnpages} & \numpages \\
+	\hline
+\end{tabularx}
+\par
+\thdgreeting
+\vfill
+}
+\else
+\renewcommand{\maketitle}{
+\renewcommand{\arraystretch}{1.7}
+\hspace{-2em}
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+	\hline
+	\multicolumn{2}{|X|}{%
+	\multirow{2}{*}{%
+		\includegraphics[width=.43\textwidth]{THD_Logo.pdf}
+	}
+	}
+	& \multicolumn{2}{l|}{\thdregnr:}\\
+	\cline{3-4}
+	\multicolumn{2}{|p{.5\textwidth}|}{}
+	& \thdcipher: & \thdpoints:\quad\quad \thdgrade:\quad\\
+	\hline
+	\multicolumn{4}{|c|}{\textbf{\faculty}}\\
+	\hline
+	\textbf{\thdcourse:} & \course & \textbf{\thdsemester:} & \semester \\
+	\hline
+	\textbf{\thdcostudies:} & \programme & \textbf{\thdduration:} & \duration \\
+	\hline
+	\textbf{\thdexaminer:} & \theauthor & \textbf{\thddate} & \thedate \\
+	\hline
+	\textbf{\thdsupplies:} & \supplies & \textbf{\thdtime} & \thetime \\
+	\hline
+	\textbf{\thdexamtype:} & \examtype & \textbf{\thdnpages} & \numpages \\
+	\hline
+\end{tabularx}
+\par
+\thdgreeting
+\vfill
+}
+\fi
+
+% If you need a grading table, use option addpoints,
+% AND place a command like this somewhere
+%\begin{center}
+%	\gradetable[h]{}
+%\end{center}
+
+%\vfill
+
+%\clearpage

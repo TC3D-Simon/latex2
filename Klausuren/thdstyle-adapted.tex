@@ -1,0 +1,138 @@
+% \vqword{Frage}
+% \vpword{Punkte}
+% \vsword{Erzielt}
+% \vtword{Gesamt:}
+% \hqword{Frage:}
+% \hpword{Punkte:}
+% \hsword{Erzielt:}
+% \htword{Gesamt}
+%\pointpoints{Punkt}{Punkte}
+%\qformat{\bfseries Frage \thequestion~(\totalpoints~\points):% \hfill}
+\newcommand{\Seiten}{\thepage\ /\ \numpages}
+
+\newcommand{\REM}[1]{}
+\REM{
+\pgfpagesdeclarelayout{boxed}
+{%
+  \edef\pgfpageoptionborder{0pt}
+}
+{%
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.93\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+}
+% BORDERS NOT WORKING \pgfpagesuselayout{boxed}
+\extrawidth{3cm}
+%\extraheadheight[-2cm]{2cm}
+%\extrafootheight{-1cm}
+
+
+\REM{
+
+\RequirePackage{tikz}
+\tikzset{
+  frame/.style={
+    line width=.5mm}
+%    black,
+%    rounded corners}
+}
+\newcommand\fsep{2mm}
+
+\RequirePackage{scrlayer}
+\DeclareNewLayer[%
+  background,% Hintergrundebene
+  textarea,% Größe und Position des Textbereichs
+  contents={%
+    \tikz{%
+      \useasboundingbox(0,0)rectangle(\layerwidth,\layerheight);
+      \draw[frame](-\fsep,-\fsep)rectangle(\layerwidth+\fsep,\layerheight+\fsep);
+    }%
+  }
+]{frame.bg}
+\DeclarePageStyleByLayers{frame}{frame.bg}
+
+\pagestyle{frame}
+
+}
+
+
+
+
+
+
+
+
+%\extrafootheight{2cm}
+\extraheadheight[-2cm]{2cm}
+%\renewcommand{\headheight}{4cm}
+%\renewcommand{\footskip}{2cm}
+\newsavebox{\headbox}
+\ifdefined\pffl
+    \savebox{\headbox}{%
+	\parbox{\textwidth}{%
+    \begin{tabularx}{\textwidth}{|X|X|X|X|}
+	\hline
+	\multicolumn{2}{|p{.5\textwidth}|}{%
+		\vfill\includegraphics[width=.43\textwidth]{THD_Logo.pdf}
+	}
+	& \multicolumn{2}{X|}{
+	\thdregnr:}\\
+	\hline
+	\multicolumn{2}{|p{.5\textwidth}|}{\thdcipher:}
+	& \multicolumn{1}{X|}{\thdcourse:}
+	& \multicolumn{1}{X|}{\thdsemester:}\\
+	\multicolumn{2}{|p{.5\textwidth}|}{}
+	& \multicolumn{1}{X|}{\course}
+	& \multicolumn{1}{X|}{\semester}\\
+	\multicolumn{2}{|p{.5\textwidth}|}{}
+	& \multicolumn{1}{X|}{}
+	& \multicolumn{1}{X|}{}\\
+	\hline
+   \multicolumn{1}{|l|}{\textbf{\thdexaminer}}
+	&
+	\multicolumn{3}{|l|}{\theauthor}\\
+	\hline
+	\end{tabularx}
+	}
+}
+\else
+\savebox{\headbox}{%
+	\renewcommand{\arraystretch}{1.7}
+	\parbox{\textwidth}{%
+	\begin{tabularx}{\linewidth}{|X|X|X|X|}
+	\hline
+	\multicolumn{2}{|X|}{%
+	\multirow{2}{*}{%
+		\includegraphics[width=.43\textwidth]{THD_Logo.pdf}
+	}
+	}
+	& \multicolumn{2}{l|}{\thdregnr:}\\
+	\cline{3-4}
+	\multicolumn{2}{|p{.45\textwidth}|}{}
+	& 
+	\multicolumn{2}{p{.45\textwidth}|}{\thdcipher:} \\
+	\hline
+	\textbf{\thdcourse:} & \course & \textbf{\thdsemester:} & \semester \\
+	\hline
+	
+	\textbf{\thdexaminer:} & \multicolumn{3}{p{.7\textwidth}|}{\theauthor} \\
+	\hline
+	\end{tabularx}
+	}
+}
+\fi
+
+
+\chead[]{\usebox\headbox}
+\cfoot{\Seiten}
+
