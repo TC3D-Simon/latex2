@@ -5,7 +5,7 @@
 %%% peter.faber@th-deg.de
 
 % The newest version of this documentclass should always be available
-% from my web page: http://mygit.th-deg.de/
+% from my web page: https://mygit.th-deg.de/peter.faber/thd-latex-vorlagen
 
 
 \def\fileversion{0.1}
