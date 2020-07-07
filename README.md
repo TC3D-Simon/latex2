@@ -28,7 +28,7 @@ erhält den Verzeichnisnamen.
 ## Klausuren
 
 Dieses Verzeichnis enthält mindestens 2,5 Projekte:
-Einerseits die original A. Fischersche Vorlage für Klausuren nebst 2 "-adapted" Dateien, mit denen ich zunächst versucht habe, (halb)automatisch aus diesen Dateien eine Version zu generieren, mit der man Klausuren in mehreren Sprachen verfassen kann, und schließlich die stattdessen dann entstandene thdexam.cls-Klasse, die vermutlich der eigentlich richtige Ansatz ist. Diese ist in der Lage, Randtexte wahlweise auf Deutsch, Englisch oder kombiniert zu erzeugen und Lösungen ein- oder auszublenden. Irgendwann sollte ich das dann vermutlich zuginsten dieser Klasse auch mal aufräumen... :-)
+Einerseits die original A. Fischersche Vorlage für Klausuren nebst 2 "-adapted" Dateien, mit denen ich zunächst versucht habe, (halb)automatisch aus diesen Dateien eine Version zu generieren, mit der man Klausuren in mehreren Sprachen verfassen kann, und schließlich die stattdessen dann entstandene thdexam.cls-Klasse, die die exam-Klasse als Basisklasse verwendet und vermutlich der eigentlich richtige Ansatz ist. Diese ist in der Lage, Randtexte wahlweise auf Deutsch, Englisch oder kombiniert zu erzeugen und Lösungen ein- oder auszublenden. Irgendwann sollte ich das dann vermutlich zuginsten dieser Klasse auch mal aufräumen... :-)
 
 Die Vorlage basiert auf dem
 [LaTeX `exam.cls` Package](https://ctan.org/pkg/exam?lang=de) und orientiert sich
