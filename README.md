@@ -1,5 +1,7 @@
 # THD LaTeX Vorlagen
 
+Dies ist ein Fork der [hervorragenden Arbeit von Andreas Fischer](https://mygit.th-deg.de/afischer/thd-latex-vorlagen/), um weitere auftauchende Anwendungsfälle (insbesondere internationale Klausuren) abzudecken.
+
 In diesem Repository befinden sich diverse LaTeX Vorlagen zur freien Verwendung
 für Kollegen an der THD. Konstruktive Kritik und Beiträge sind gerne willkommen.
 
