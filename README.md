@@ -27,13 +27,17 @@ erhält den Verzeichnisnamen.
 
 ## Klausuren
 
-Dieses Verzeichnis enthält eine Vorlage für Klausuren. Die Vorlage basiert auf dem
+Dieses Verzeichnis enthält mindestens 2,5 Projekte:
+Einerseits die original A. Fischersche Vorlage für Klausuren nebst 2 "-adapted" Dateien, mit denen ich zunächst versucht habe, (halb)automatisch aus diesen Dateien eine Version zu generieren, mit der man Klausuren in mehreren Sprachen verfassen kann, und schließlich die stattdessen dann entstandene thdexam.cls-Klasse, die vermutlich der eigentlich richtige Ansatz ist. Diese ist in der Lage, Randtexte wahlweise auf Deutsch, englisch oder kombiniert zu erzeugen und Lösungen ein- oder auszublenden. Irgendwann sollte ich das dann vermutlich zuginsten dieser Klasse auch mal aufräumen... :-)
+
+Die Vorlage basiert auf dem
 [LaTeX `exam.cls` Package](https://ctan.org/pkg/exam?lang=de) und orientiert sich
 im Design an der Vorgabe durch das Studienzentrum. Modifikationen müssen nur in der
 Datei `exam.tex` erfolgen. Es können die normalen Kommandos aus der `exam` Klasse
 verwendet werden (das Handbuch findet sich [hier](http://mirrors.ctan.org/macros/latex/contrib/exam/examdoc.pdf "Using the exam document class")).
 Mittels `make` kann anschließend das PDF erstellt werden.
 
+
 ---
-[Andreas Fischer](mailto:andreas.fischer@th-deg.de "Mail an Andreas Fischer")
+[Peter Faber](mailto:peter.faber@th-deg.de "Mail an Peter Faber")
 
